@@ -1,54 +1,72 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:kspDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
 
-> Configure project :app
-e: file:///E:/SmartPantry/app/build.gradle.kts:19:36: Unresolved reference: util
-e: file:///E:/SmartPantry/app/build.gradle.kts:22:39: Unresolved reference: io
+> Task :app:compileDebugKotlin
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/ui/pantry/AddEditItemFragment.kt:163:55 Unresolved reference: GRAMS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/ui/pantry/AddEditItemFragment.kt:164:56 Unresolved reference: MILLILITERS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/ui/pantry/AddEditItemFragment.kt:165:51 Unresolved reference: OUNCES
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/ui/pantry/AddEditItemFragment.kt:166:42 Unresolved reference: PIECES
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/ui/pantry/AddEditItemFragment.kt:168:31 Unresolved reference: PIECES
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:62:52 Unresolved reference: GRAMS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:63:63 Unresolved reference: KILOGRAMS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:64:59 Unresolved reference: MILLILITERS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:65:48 Unresolved reference: LITERS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:66:49 Unresolved reference: OUNCES
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:67:56 Unresolved reference: POUNDS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:68:39 Unresolved reference: CUPS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:69:56 Unresolved reference: PIECES
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:70:61 Unresolved reference: TABLESPOONS
+e: file:///E:/SmartPantry/app/src/main/java/com/smartpantry/utils/NlpParser.kt:71:56 Unresolved reference: TEASPOONS
 
-FAILURE: Build completed with 2 failures.
+> Task :app:compileDebugKotlin FAILED
 
-1: Task failed with an exception.
------------
-* Where:
-Build file 'E:\SmartPantry\app\build.gradle.kts' line: 19
+FAILURE: Build failed with an exception.
 
 * What went wrong:
-Script compilation errors:
-
-  Line 19:         val localProperties = java.util.Properties()
-                                              ^ Unresolved reference: util
-
-  Line 22:             localProperties.load(java.io.FileInputStream(localPropertiesFile))
-                                                 ^ Unresolved reference: io
-
-2 errors
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
-==============================================================================
 
-2: Task failed with an exception.
------------
-* Where:
-Build file 'E:\SmartPantry\app\build.gradle.kts' line: 19
-
-* What went wrong:
-Script compilation errors:
-
-  Line 19:         val localProperties = java.util.Properties()
-                                              ^ Unresolved reference: util
-
-  Line 22:             localProperties.load(java.io.FileInputStream(localPropertiesFile))
-                                                 ^ Unresolved reference: io
-
-2 errors
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-> Get more help at https://help.gradle.org.
-==============================================================================
-
-BUILD FAILED in 1s
+BUILD FAILED in 4s
+30 actionable tasks: 2 executed, 28 up-to-date

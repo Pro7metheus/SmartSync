@@ -28,7 +28,7 @@ class PantryViewModel(application: Application) : AndroidViewModel(application) 
 
     private var searchJob: Job? = null
 
-    val allItems: LiveData<List<PantryItem>> get() = repository.getAllItems(userId)
+    val allItems: LiveData<List<PantryItem>> by lazy { repository.getAllItems(userId) }
 
     val filteredItems: LiveData<List<PantryItem>> = MediatorLiveData<List<PantryItem>>().apply {
         addSource(allItems) { filterItems() }
@@ -90,6 +90,7 @@ class PantryViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun clearUsdaSearch() {
+        searchJob?.cancel()
         _usdaSearchResults.value = emptyList()
     }
 }

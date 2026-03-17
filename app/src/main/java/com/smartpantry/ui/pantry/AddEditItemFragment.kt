@@ -93,6 +93,8 @@ class AddEditItemFragment : Fragment() {
     }
 
     private fun showDatePicker(title: String, onDateSelected: (Long) -> Unit) {
+        if (parentFragmentManager.findFragmentByTag(title) != null) return
+
         val picker = MaterialDatePicker.Builder.datePicker()
             .setTitleText(title)
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
@@ -130,44 +132,53 @@ class AddEditItemFragment : Fragment() {
                 val query = s?.toString() ?: ""
                 // Only search if user is typing (not when an item was just selected)
                 if (binding.etName.hasFocus()) {
-                    viewModel.searchUsdaFoods(query)
+                    val nlpResult = com.smartpantry.utils.NlpParser.parseInput(query)
+                    viewModel.searchUsdaFoods(nlpResult.foodName)
                 }
             }
         })
 
         // Handle item selection from dropdown
-        binding.etName.setOnItemClickListener { _, _, position, _ ->
-            val results = viewModel.usdaSearchResults.value
-            if (position in results.indices) {
-                val selectedFood = results[position]
-                
+        binding.etName.setOnItemClickListener { parent, _, position, _ ->
+            val selectedText = parent.getItemAtPosition(position) as String
+            val selectedFood = viewModel.usdaSearchResults.value.find {
+                it.description.lowercase().replaceFirstChar { char -> char.uppercase() } == selectedText
+            }
+            
+            if (selectedFood != null) {
+                // Parse original input for quantity/unit before setting Name
+                val currentInput = binding.etName.text.toString()
+                val nlpResult = com.smartpantry.utils.NlpParser.parseInput(currentInput)
+
                 // Set Name
                 binding.etName.setText(selectedFood.description.lowercase().replaceFirstChar { char -> char.uppercase() }, false)
                 
                 // Clear the dropdown results so it doesn't pop up again
                 viewModel.clearUsdaSearch()
 
-                // Set Calories
-                val cals = selectedFood.energyKcal
-                if (cals > 0) {
-                    // Try to format calories to an Int, if it's very close (like 52.0)
-                    binding.etCalories.setText(cals.toInt().toString())
-                }
-
-                // Try to set measure/weight
-                selectedFood.servingSize?.let {
-                    binding.etQuantity.setText(it.toString())
-                }
-                
-                selectedFood.servingSizeUnit?.let { unit ->
-                    // Convert units to our local representation if possible
-                    val friendlyUnit = when (unit.lowercase()) {
-                        "g", "gr", "gram" -> "Grams"
-                        "ml", "milliliter" -> "Milliliters"
-                        "oz", "ounce" -> "Ounces"
-                        else -> "Pieces" // Default to pieces if unknown
+                // Set Quantity and Unit using NLP results or fallback to API defaults
+                val finalQuantity = nlpResult.quantity ?: selectedFood.servingSize ?: 1.0
+                val finalUnit = nlpResult.unit ?: selectedFood.servingSizeUnit?.let { unit ->
+                    when (unit.lowercase()) {
+                        "g", "gr", "gram" -> "g"
+                        "ml", "milliliter" -> "ml"
+                        "oz", "ounce" -> "oz"
+                        else -> "pieces"
                     }
-                    binding.dropdownUnit.setText(friendlyUnit, false)
+                } ?: "pieces"
+
+                binding.etQuantity.setText(if (finalQuantity % 1.0 == 0.0) finalQuantity.toInt().toString() else finalQuantity.toString())
+                binding.dropdownUnit.setText(finalUnit, false)
+
+                // Set Calories (scale if user provided a specific quantity and USDA gives a serving size)
+                val baseCals = selectedFood.energyKcal
+                if (baseCals > 0) {
+                    val calsToSet = if (nlpResult.quantity != null && selectedFood.servingSize != null && selectedFood.servingSize > 0) {
+                        (baseCals / selectedFood.servingSize) * nlpResult.quantity
+                    } else {
+                        baseCals
+                    }
+                    binding.etCalories.setText(calsToSet.toInt().toString())
                 }
             }
         }

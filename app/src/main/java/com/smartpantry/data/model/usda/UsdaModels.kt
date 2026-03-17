@@ -13,13 +13,13 @@ data class UsdaFood(
     @SerializedName("fdcId") val fdcId: Int,
     @SerializedName("description") val description: String,
     @SerializedName("brandOwner") val brandOwner: String?,
-    @SerializedName("foodNutrients") val foodNutrients: List<UsdaNutrient>,
+    @SerializedName("foodNutrients") val foodNutrients: List<UsdaNutrient>? = emptyList(),
     @SerializedName("servingSize") val servingSize: Double?,
     @SerializedName("servingSizeUnit") val servingSizeUnit: String?
 ) {
     // Helper property to extract energy (calories) specifically, as it is the most common use case.
     val energyKcal: Double
-        get() = foodNutrients.find { it.nutrientName == "Energy" && it.unitName == "KCAL" }?.value ?: 0.0
+        get() = foodNutrients?.find { it.nutrientName == "Energy" && it.unitName == "KCAL" }?.value ?: 0.0
 }
 
 data class UsdaNutrient(
