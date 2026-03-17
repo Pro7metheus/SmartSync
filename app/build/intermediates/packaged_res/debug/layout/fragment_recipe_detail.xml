@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="?attr/colorSurface" android:fillViewport="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:id="@+id/tv_recipe_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="?attr/textAppearanceHeadlineMedium" android:textColor="?attr/colorPrimary" android:textStyle="bold" />
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip android:id="@+id/chip_category" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+            <TextView android:id="@+id/tv_est_calories" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_marginStart="12dp" android:textAppearance="?attr/textAppearanceLabelLarge" android:textColor="?attr/colorOnSurfaceVariant" />
+        </LinearLayout>
+
+        <!-- Ingredients -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/ingredients" android:textAppearance="?attr/textAppearanceTitleMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+        <LinearLayout android:id="@+id/layout_ingredients" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" />
+
+        <!-- Instructions -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/instructions" android:textAppearance="?attr/textAppearanceTitleMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+        <TextView android:id="@+id/tv_instructions" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:lineSpacingExtra="4dp" android:textAppearance="?attr/textAppearanceBodyMedium" android:textColor="?attr/colorOnSurface" />
+    </LinearLayout>
+</ScrollView>

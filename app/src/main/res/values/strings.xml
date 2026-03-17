@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Pantry</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_recipes">Recipes</string>
+    <string name="nav_calories">Calories</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Auth -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+    <string name="have_account">Already have an account? Login</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="create_account">Create Account</string>
+    <string name="login_subtitle">Sign in to manage your pantry</string>
+    <string name="register_subtitle">Get started with Smart Pantry</string>
+
+    <!-- Dashboard -->
+    <string name="total_items">Total Items</string>
+    <string name="expiring_soon">Expiring Soon</string>
+    <string name="low_stock">Low Stock</string>
+    <string name="out_of_stock">Out of Stock</string>
+    <string name="category_distribution">Category Distribution</string>
+    <string name="daily_calories">Daily Calories</string>
+    <string name="calorie_goal">of %d kcal goal</string>
+    <string name="kcal_format">%d kcal</string>
+
+    <!-- Pantry -->
+    <string name="add_item">Add Item</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="item_name">Item Name</string>
+    <string name="category">Category</string>
+    <string name="quantity">Quantity</string>
+    <string name="unit">Unit</string>
+    <string name="min_quantity">Min Quantity (for alerts)</string>
+    <string name="purchase_date">Purchase Date</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="calories_per_unit">Calories per unit</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="search_items">Search items…</string>
+    <string name="all_categories">All</string>
+    <string name="filter_by">Filter by</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="undo">Undo</string>
+    <string name="empty_pantry">Your pantry is empty.\nTap + to add items!</string>
+    <string name="no_results">No items found</string>
+
+    <!-- Recipes -->
+    <string name="recipe_suggestions">Recipe Suggestions</string>
+    <string name="ingredients_match">%d%% ingredients match</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="available">Available</string>
+    <string name="not_available">Not available</string>
+    <string name="no_recipes">No matching recipes found.\nAdd more items to your pantry!</string>
+    <string name="est_calories">Est. %d kcal</string>
+
+    <!-- Calories -->
+    <string name="log_meal">Log Meal</string>
+    <string name="select_item">Select Item</string>
+    <string name="quantity_consumed">Quantity Consumed</string>
+    <string name="today_meals">Today\'s Meals</string>
+    <string name="weekly_overview">Weekly Overview</string>
+    <string name="total_today">Total Today</string>
+    <string name="daily_goal">Daily Goal</string>
+    <string name="set_goal">Set Goal</string>
+    <string name="calorie_goal_title">Daily Calorie Goal</string>
+    <string name="enter_calorie_goal">Enter your daily calorie goal</string>
+    <string name="avg_weekly">Avg: %d kcal/day</string>
+    <string name="no_meals_today">No meals logged today.\nTap the button to log a meal!</string>
+
+    <!-- Profile -->
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirm">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="settings">Settings</string>
+
+    <!-- Expiry status -->
+    <string name="expired">Expired</string>
+    <string name="days_left">%d days left</string>
+    <string name="expires_today">Expires today</string>
+</resources>

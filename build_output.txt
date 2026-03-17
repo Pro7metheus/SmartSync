@@ -1,0 +1,54 @@
+
+> Configure project :app
+e: file:///E:/SmartPantry/app/build.gradle.kts:19:36: Unresolved reference: util
+e: file:///E:/SmartPantry/app/build.gradle.kts:22:39: Unresolved reference: io
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* Where:
+Build file 'E:\SmartPantry\app\build.gradle.kts' line: 19
+
+* What went wrong:
+Script compilation errors:
+
+  Line 19:         val localProperties = java.util.Properties()
+                                              ^ Unresolved reference: util
+
+  Line 22:             localProperties.load(java.io.FileInputStream(localPropertiesFile))
+                                                 ^ Unresolved reference: io
+
+2 errors
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* Where:
+Build file 'E:\SmartPantry\app\build.gradle.kts' line: 19
+
+* What went wrong:
+Script compilation errors:
+
+  Line 19:         val localProperties = java.util.Properties()
+                                              ^ Unresolved reference: util
+
+  Line 22:             localProperties.load(java.io.FileInputStream(localPropertiesFile))
+                                                 ^ Unresolved reference: io
+
+2 errors
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+BUILD FAILED in 1s

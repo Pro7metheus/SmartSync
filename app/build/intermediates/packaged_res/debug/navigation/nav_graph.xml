@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/loginFragment">
+
+    <!-- Auth -->
+    <fragment android:id="@+id/loginFragment" android:name="com.smartpantry.ui.auth.LoginFragment" android:label="Login" tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_login_to_register" app:destination="@id/registerFragment" />
+        <action android:id="@+id/action_login_to_dashboard" app:destination="@id/dashboardFragment" app:popUpTo="@id/loginFragment" app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment android:id="@+id/registerFragment" android:name="com.smartpantry.ui.auth.RegisterFragment" android:label="Register" tools:layout="@layout/fragment_register">
+        <action android:id="@+id/action_register_to_login" app:destination="@id/loginFragment" app:popUpTo="@id/loginFragment" app:popUpToInclusive="true" />
+        <action android:id="@+id/action_register_to_dashboard" app:destination="@id/dashboardFragment" app:popUpTo="@id/loginFragment" app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Dashboard -->
+    <fragment android:id="@+id/dashboardFragment" android:name="com.smartpantry.ui.dashboard.DashboardFragment" android:label="Dashboard" tools:layout="@layout/fragment_dashboard" />
+
+    <!-- Pantry -->
+    <fragment android:id="@+id/pantryListFragment" android:name="com.smartpantry.ui.pantry.PantryListFragment" android:label="Pantry" tools:layout="@layout/fragment_pantry_list">
+        <action android:id="@+id/action_pantryList_to_addEdit" app:destination="@id/addEditItemFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/addEditItemFragment" android:name="com.smartpantry.ui.pantry.AddEditItemFragment" android:label="Add Item" tools:layout="@layout/fragment_add_edit_item">
+        <argument android:name="itemId" app:argType="long" android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Recipes -->
+    <fragment android:id="@+id/recipeListFragment" android:name="com.smartpantry.ui.recipes.RecipeListFragment" android:label="Recipes" tools:layout="@layout/fragment_recipe_list">
+        <action android:id="@+id/action_recipeList_to_detail" app:destination="@id/recipeDetailFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/recipeDetailFragment" android:name="com.smartpantry.ui.recipes.RecipeDetailFragment" android:label="Recipe Detail" tools:layout="@layout/fragment_recipe_detail">
+        <argument android:name="recipeId" app:argType="integer" android:defaultValue="-1" />
+    </fragment>
+
+    <!-- Calories -->
+    <fragment android:id="@+id/mealLogFragment" android:name="com.smartpantry.ui.calories.MealLogFragment" android:label="Calories" tools:layout="@layout/fragment_meal_log">
+        <action android:id="@+id/action_mealLog_to_weekly" app:destination="@id/weeklyCalorieFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/weeklyCalorieFragment" android:name="com.smartpantry.ui.calories.WeeklyCalorieFragment" android:label="Weekly Calories" tools:layout="@layout/fragment_weekly_calories" />
+
+    <!-- Profile -->
+    <fragment android:id="@+id/profileFragment" android:name="com.smartpantry.ui.profile.ProfileFragment" android:label="Profile" tools:layout="@layout/fragment_profile">
+        <action android:id="@+id/action_profile_to_login" app:destination="@id/loginFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="?attr/colorSurface" android:clipToPadding="false" android:padding="16dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView android:id="@+id/tv_greeting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_dashboard" android:textAppearance="?attr/textAppearanceHeadlineMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+        <TextView android:id="@+id/tv_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Your kitchen at a glance" android:textAppearance="?attr/textAppearanceBodyMedium" android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <!-- Summary Cards Grid -->
+        <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:columnCount="2" android:useDefaultMargins="true">
+
+            <!-- Total Items -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="4dp" app:cardBackgroundColor="?attr/colorPrimaryContainer">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/total_items" android:textAppearance="?attr/textAppearanceLabelMedium" android:textColor="?attr/colorOnPrimaryContainer" />
+
+                    <TextView android:id="@+id/tv_total_items" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineLarge" android:textColor="?attr/colorOnPrimaryContainer" android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Expiring Soon -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="4dp" app:cardBackgroundColor="#FFF3E0">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/expiring_soon" android:textAppearance="?attr/textAppearanceLabelMedium" android:textColor="#E65100" />
+
+                    <TextView android:id="@+id/tv_expiring_soon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineLarge" android:textColor="#E65100" android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Low Stock -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="4dp" app:cardBackgroundColor="#FCE4EC">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/low_stock" android:textAppearance="?attr/textAppearanceLabelMedium" android:textColor="#880E4F" />
+
+                    <TextView android:id="@+id/tv_low_stock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineLarge" android:textColor="#880E4F" android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Out of Stock -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="4dp" app:cardBackgroundColor="#FFEBEE">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/out_of_stock" android:textAppearance="?attr/textAppearanceLabelMedium" android:textColor="#B71C1C" />
+
+                    <TextView android:id="@+id/tv_out_of_stock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineLarge" android:textColor="#B71C1C" android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
+
+        <!-- Daily Calories Card -->
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/daily_calories" android:textAppearance="?attr/textAppearanceTitleMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center_vertical" android:orientation="horizontal">
+
+                    <TextView android:id="@+id/tv_calorie_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 kcal" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+                    <TextView android:id="@+id/tv_calorie_goal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textAppearance="?attr/textAppearanceBodySmall" android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
+
+                <ProgressBar android:id="@+id/progress_calories" style="@android:style/Widget.ProgressBar.Horizontal" android:layout_width="match_parent" android:layout_height="16dp" android:layout_marginTop="8dp" android:max="100" android:progressDrawable="@drawable/calorie_progress_background" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Category Distribution Chart -->
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/category_distribution" android:textAppearance="?attr/textAppearanceTitleMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+                <com.github.mikephil.charting.charts.PieChart android:id="@+id/pie_chart" android:layout_width="match_parent" android:layout_height="240dp" android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Spacer for bottom nav -->
+        <Space android:layout_width="match_parent" android:layout_height="16dp" />
+    </LinearLayout>
+</ScrollView>

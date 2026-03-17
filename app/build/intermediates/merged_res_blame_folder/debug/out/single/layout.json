@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\item_recipe.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\item_recipe.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_recipe_list.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_recipe_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\item_meal_log.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\item_meal_log.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_recipe_detail.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_recipe_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "com.smartpantry.app-mergeDebugResources-55:/layout/fragment_add_edit_item.xml",
+        "source": "com.smartpantry.app-main-58:/layout/fragment_add_edit_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_pantry_list.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_pantry_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_weekly_calories.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_weekly_calories.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\item_pantry.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\item_pantry.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_register.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_add_edit_item.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_add_edit_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_meal_log.xml",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_meal_log.xml"
+    }
+]

@@ -1,0 +1,59 @@
+com.smartpantry.app-core-1.12.0-0 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\0151249b72d6296e643df148676301af\transformed\core-1.12.0\res
+com.smartpantry.app-lifecycle-livedata-core-ktx-2.7.0-1 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\05a693d1102cff9976b530f235fb080c\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.smartpantry.app-recyclerview-1.1.0-2 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\07f2a94af1d6afc75e39da9fce3c1cb6\transformed\recyclerview-1.1.0\res
+com.smartpantry.app-appcompat-resources-1.6.1-3 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\0e21b64f9fdc99eb848c0f53bda3d565\transformed\appcompat-resources-1.6.1\res
+com.smartpantry.app-lifecycle-livedata-core-2.7.0-4 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\0ef754e6fe40713dbdb253ca4ad21a0c\transformed\lifecycle-livedata-core-2.7.0\res
+com.smartpantry.app-profileinstaller-1.3.0-5 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\108b02be4a84b6d56d54450e4a0692d5\transformed\profileinstaller-1.3.0\res
+com.smartpantry.app-lifecycle-process-2.7.0-6 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\14c473b5e0275c9fc5fe4ba7e78aeb7a\transformed\lifecycle-process-2.7.0\res
+com.smartpantry.app-cardview-1.0.0-7 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\1c0063cac456be980e0ed57fc7694e9a\transformed\cardview-1.0.0\res
+com.smartpantry.app-navigation-ui-2.7.6-8 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\239c34cb83287b69cab23e8e8b27d37c\transformed\navigation-ui-2.7.6\res
+com.smartpantry.app-viewpager2-1.0.0-9 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\27eb831c45976565a656c708748a0e73\transformed\viewpager2-1.0.0\res
+com.smartpantry.app-navigation-runtime-ktx-2.7.6-10 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\2953101c9e9563b94c889c8b9fe9ef26\transformed\navigation-runtime-ktx-2.7.6\res
+com.smartpantry.app-room-ktx-2.6.1-11 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\2bf494d227ed89156e34fed87ea34983\transformed\room-ktx-2.6.1\res
+com.smartpantry.app-room-runtime-2.6.1-12 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\2d13f5d160adb0d5f197dd5d93bdf45d\transformed\room-runtime-2.6.1\res
+com.smartpantry.app-lifecycle-livedata-2.7.0-13 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\366be775836ab2a0d1a3284060d80608\transformed\lifecycle-livedata-2.7.0\res
+com.smartpantry.app-navigation-common-2.7.6-14 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\396f15858f2ab4e3237869ba359bb527\transformed\navigation-common-2.7.6\res
+com.smartpantry.app-sqlite-framework-2.4.0-15 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\3c00a516c9330576f16663ebfb327470\transformed\sqlite-framework-2.4.0\res
+com.smartpantry.app-drawerlayout-1.1.1-16 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\3c169c70b0da230b0fe642bdd3555a71\transformed\drawerlayout-1.1.1\res
+com.smartpantry.app-savedstate-ktx-1.2.1-17 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\3c38bef8ce8f5a584a179e3f1aa6ea71\transformed\savedstate-ktx-1.2.1\res
+com.smartpantry.app-startup-runtime-1.1.1-18 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\3fcc9d4e1ce65030194a8c1e9defdc6c\transformed\startup-runtime-1.1.1\res
+com.smartpantry.app-lifecycle-viewmodel-savedstate-2.7.0-19 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\5ad55139da89259c175d6201d6849a2d\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.smartpantry.app-appcompat-1.6.1-20 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\5d4e79ec4ce6b875145e2ac2a1791d37\transformed\appcompat-1.6.1\res
+com.smartpantry.app-core-ktx-1.12.0-21 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\674a3aafa67813168d31441b2ac27d09\transformed\core-ktx-1.12.0\res
+com.smartpantry.app-work-runtime-ktx-2.9.0-22 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\6a4690c88385a54dd75eabec7ad94e4a\transformed\work-runtime-ktx-2.9.0\res
+com.smartpantry.app-navigation-fragment-ktx-2.7.6-23 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\711947361f3004a209cfb378a3e0ca33\transformed\navigation-fragment-ktx-2.7.6\res
+com.smartpantry.app-lifecycle-viewmodel-ktx-2.7.0-24 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\746c1138773d306b5e6da231d87697f9\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.smartpantry.app-savedstate-1.2.1-25 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\747fcaaabb482f185e13b2d3c4f17ba3\transformed\savedstate-1.2.1\res
+com.smartpantry.app-navigation-runtime-2.7.6-26 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\7c4fb9d89ce4651d252f4eca469c2978\transformed\navigation-runtime-2.7.6\res
+com.smartpantry.app-work-runtime-2.9.0-27 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\7eef15c54a1633d2d01d808fc4942b92\transformed\work-runtime-2.9.0\res
+com.smartpantry.app-window-1.0.0-28 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\7efce1f1ba45b3d4aef4f390b0ccc032\transformed\window-1.0.0\res
+com.smartpantry.app-transition-1.4.1-29 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\90d815d7b0cc040b6b7f5040953d24b8\transformed\transition-1.4.1\res
+com.smartpantry.app-lifecycle-runtime-2.7.0-30 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\932eb872617543f268f35145c2eda2bb\transformed\lifecycle-runtime-2.7.0\res
+com.smartpantry.app-coordinatorlayout-1.1.0-31 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\9d1a87192155d44d96599dcdf2b53768\transformed\coordinatorlayout-1.1.0\res
+com.smartpantry.app-navigation-common-ktx-2.7.6-32 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\a4fd678a2722ca2b27444fde5872b69b\transformed\navigation-common-ktx-2.7.6\res
+com.smartpantry.app-lifecycle-service-2.7.0-33 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\a53e0bb8731daa3ab69e4c23f7673e4c\transformed\lifecycle-service-2.7.0\res
+com.smartpantry.app-slidingpanelayout-1.2.0-34 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\a749e2a5d73aa6e32348921271e4c797\transformed\slidingpanelayout-1.2.0\res
+com.smartpantry.app-emoji2-views-helper-1.2.0-35 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\aa32c5d554c0ec01b0ec8c074b0a909d\transformed\emoji2-views-helper-1.2.0\res
+com.smartpantry.app-fragment-ktx-1.6.2-36 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\adfacc58b4637cf4ce2b1bff4a1b55d6\transformed\fragment-ktx-1.6.2\res
+com.smartpantry.app-fragment-1.6.2-37 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\ae15ab0afb3d42c97883c21bd8ed5da6\transformed\fragment-1.6.2\res
+com.smartpantry.app-sqlite-2.4.0-38 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\b0b7c99f9168890bbe982b63aacfad47\transformed\sqlite-2.4.0\res
+com.smartpantry.app-emoji2-1.2.0-39 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\b36bce413f5fc1546214ab62002cee26\transformed\emoji2-1.2.0\res
+com.smartpantry.app-core-runtime-2.2.0-40 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\b543e8b1244ac9b5d66f4f15effe6a43\transformed\core-runtime-2.2.0\res
+com.smartpantry.app-navigation-fragment-2.7.6-41 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\bbee1469be9e3c3d39384f0fc6d2530a\transformed\navigation-fragment-2.7.6\res
+com.smartpantry.app-lifecycle-livedata-ktx-2.7.0-42 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\bf1445679719f68653bb1ecf9767daf4\transformed\lifecycle-livedata-ktx-2.7.0\res
+com.smartpantry.app-activity-1.8.0-43 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\c2bb7c94ec70543400a814f27011ac6f\transformed\activity-1.8.0\res
+com.smartpantry.app-navigation-ui-ktx-2.7.6-44 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\c71ce9cfa8f50c537b214c67efa31b1b\transformed\navigation-ui-ktx-2.7.6\res
+com.smartpantry.app-constraintlayout-2.1.4-45 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\cd75f0cc07e51ec7fd23a101456422d5\transformed\constraintlayout-2.1.4\res
+com.smartpantry.app-annotation-experimental-1.3.0-46 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\ce15b9164daaf072f1595a48682ce74c\transformed\annotation-experimental-1.3.0\res
+com.smartpantry.app-activity-ktx-1.8.0-47 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\d84c6d85b1d47f75c5dca71d24ff62f8\transformed\activity-ktx-1.8.0\res
+com.smartpantry.app-lottie-6.3.0-48 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\e1354ccca28af082b1ae127fb93cd6f8\transformed\lottie-6.3.0\res
+com.smartpantry.app-material-1.11.0-49 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\eedc38a6be86e8d98a5613e5fc49d0ce\transformed\material-1.11.0\res
+com.smartpantry.app-lifecycle-runtime-ktx-2.7.0-50 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\f4199255665beaa0e46099d20cc9d72f\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.smartpantry.app-lifecycle-viewmodel-2.7.0-51 C:\Users\Shaurya Mandawara\.gradle\caches\transforms-3\f6fa9abea6853c4273e8e07f842f9958\transformed\lifecycle-viewmodel-2.7.0\res
+com.smartpantry.app-pngs-52 E:\SmartPantry\app\build\generated\res\pngs\debug
+com.smartpantry.app-resValues-53 E:\SmartPantry\app\build\generated\res\resValues\debug
+com.smartpantry.app-packageDebugResources-54 E:\SmartPantry\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.smartpantry.app-packageDebugResources-55 E:\SmartPantry\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.smartpantry.app-merged_res-56 E:\SmartPantry\app\build\intermediates\merged_res\debug
+com.smartpantry.app-debug-57 E:\SmartPantry\app\src\debug\res
+com.smartpantry.app-main-58 E:\SmartPantry\app\src\main\res

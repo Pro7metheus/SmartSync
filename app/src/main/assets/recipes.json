@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "Vegetable Stir Fry",
+    "category": "Vegetables",
+    "ingredients": ["onion", "tomato", "bell pepper", "garlic", "oil", "salt", "pepper"],
+    "instructions": "1. Heat oil in a pan. 2. Sauté garlic and onions until golden. 3. Add bell peppers and tomatoes. 4. Cook for 5-7 minutes. 5. Season with salt and pepper.",
+    "estimatedCalories": 180
+  },
+  {
+    "id": 2,
+    "name": "Classic Pancakes",
+    "category": "Grains",
+    "ingredients": ["flour", "milk", "egg", "sugar", "butter", "baking powder"],
+    "instructions": "1. Mix flour, sugar, and baking powder. 2. Add milk, egg, and melted butter. 3. Stir until smooth. 4. Pour batter onto hot griddle. 5. Flip when bubbles form. 6. Serve warm.",
+    "estimatedCalories": 350
+  },
+  {
+    "id": 3,
+    "name": "Fruit Smoothie",
+    "category": "Beverages",
+    "ingredients": ["banana", "milk", "yogurt", "honey", "ice"],
+    "instructions": "1. Combine banana, milk, yogurt, and honey in a blender. 2. Add ice cubes. 3. Blend until smooth. 4. Pour and serve immediately.",
+    "estimatedCalories": 220
+  },
+  {
+    "id": 4,
+    "name": "Simple Dal",
+    "category": "Grains",
+    "ingredients": ["lentils", "onion", "tomato", "garlic", "turmeric", "cumin", "salt", "oil"],
+    "instructions": "1. Wash and boil lentils with turmeric until soft. 2. Heat oil, add cumin seeds. 3. Sauté onions and garlic. 4. Add tomatoes and cook. 5. Mix into boiled lentils. 6. Simmer for 10 minutes.",
+    "estimatedCalories": 280
+  },
+  {
+    "id": 5,
+    "name": "Grilled Cheese Sandwich",
+    "category": "Dairy",
+    "ingredients": ["bread", "cheese", "butter"],
+    "instructions": "1. Butter one side of each bread slice. 2. Place cheese between unbuttered sides. 3. Grill on medium heat until golden on both sides. 4. Serve hot.",
+    "estimatedCalories": 400
+  },
+  {
+    "id": 6,
+    "name": "Masala Omelette",
+    "category": "Dairy",
+    "ingredients": ["egg", "onion", "tomato", "green chili", "salt", "oil", "coriander"],
+    "instructions": "1. Beat eggs with salt. 2. Mix in chopped onion, tomato, green chili, and coriander. 3. Heat oil in a pan. 4. Pour mixture and cook until set. 5. Flip and cook other side.",
+    "estimatedCalories": 250
+  },
+  {
+    "id": 7,
+    "name": "Jeera Rice",
+    "category": "Grains",
+    "ingredients": ["rice", "cumin", "butter", "salt", "water", "bay leaf"],
+    "instructions": "1. Wash rice and soak for 20 minutes. 2. Heat butter, add cumin and bay leaf. 3. Add rice and sauté for 2 minutes. 4. Add water and salt. 5. Cook until water is absorbed.",
+    "estimatedCalories": 320
+  },
+  {
+    "id": 8,
+    "name": "Mango Lassi",
+    "category": "Beverages",
+    "ingredients": ["mango", "yogurt", "sugar", "milk", "cardamom"],
+    "instructions": "1. Blend mango pulp with yogurt and sugar. 2. Add milk and a pinch of cardamom. 3. Blend until smooth and frothy. 4. Serve chilled.",
+    "estimatedCalories": 200
+  },
+  {
+    "id": 9,
+    "name": "Tomato Soup",
+    "category": "Vegetables",
+    "ingredients": ["tomato", "onion", "garlic", "butter", "salt", "pepper", "cream"],
+    "instructions": "1. Sauté onion and garlic in butter. 2. Add chopped tomatoes and cook until soft. 3. Blend until smooth. 4. Return to heat, season with salt and pepper. 5. Add cream and serve.",
+    "estimatedCalories": 150
+  },
+  {
+    "id": 10,
+    "name": "Aloo Paratha",
+    "category": "Grains",
+    "ingredients": ["flour", "potato", "onion", "green chili", "salt", "butter", "coriander"],
+    "instructions": "1. Boil and mash potatoes. 2. Mix with chopped onion, chili, coriander, and salt. 3. Make dough balls from flour. 4. Stuff with potato filling. 5. Roll and cook on tawa with butter.",
+    "estimatedCalories": 380
+  },
+  {
+    "id": 11,
+    "name": "Chicken Curry",
+    "category": "Meat",
+    "ingredients": ["chicken", "onion", "tomato", "garlic", "ginger", "turmeric", "cumin", "coriander", "oil", "salt"],
+    "instructions": "1. Heat oil and sauté onions until brown. 2. Add ginger-garlic paste. 3. Add spices and cook. 4. Add tomatoes and cook until soft. 5. Add chicken pieces. 6. Cover and cook for 25 minutes.",
+    "estimatedCalories": 450
+  },
+  {
+    "id": 12,
+    "name": "Caesar Salad",
+    "category": "Vegetables",
+    "ingredients": ["lettuce", "bread", "cheese", "garlic", "olive oil", "lemon", "egg"],
+    "instructions": "1. Tear lettuce into bite-size pieces. 2. Make croutons from bread cubes with garlic and olive oil. 3. Toss lettuce with croutons. 4. Drizzle with lemon and olive oil dressing. 5. Top with cheese.",
+    "estimatedCalories": 280
+  },
+  {
+    "id": 13,
+    "name": "Banana Bread",
+    "category": "Snacks",
+    "ingredients": ["banana", "flour", "sugar", "egg", "butter", "baking powder", "vanilla"],
+    "instructions": "1. Mash ripe bananas. 2. Mix melted butter, sugar, and egg. 3. Add mashed bananas. 4. Fold in flour, baking powder, and vanilla. 5. Pour into loaf pan. 6. Bake at 180°C for 50 minutes.",
+    "estimatedCalories": 320
+  },
+  {
+    "id": 14,
+    "name": "Spiced Chai",
+    "category": "Beverages",
+    "ingredients": ["tea", "milk", "sugar", "ginger", "cardamom", "cinnamon"],
+    "instructions": "1. Boil water with ginger, cardamom, and cinnamon. 2. Add tea leaves and simmer. 3. Add milk and bring to boil. 4. Strain and add sugar to taste.",
+    "estimatedCalories": 120
+  },
+  {
+    "id": 15,
+    "name": "Pasta Aglio e Olio",
+    "category": "Grains",
+    "ingredients": ["pasta", "garlic", "olive oil", "red chili", "parsley", "salt"],
+    "instructions": "1. Cook pasta al dente in salted water. 2. Sauté sliced garlic and chili in olive oil. 3. Toss cooked pasta in the garlic oil. 4. Garnish with parsley. 5. Serve immediately.",
+    "estimatedCalories": 420
+  },
+  {
+    "id": 16,
+    "name": "Egg Fried Rice",
+    "category": "Grains",
+    "ingredients": ["rice", "egg", "onion", "garlic", "soy sauce", "oil", "pepper", "carrot"],
+    "instructions": "1. Cook rice and let it cool. 2. Scramble eggs in oil. 3. Sauté onion, garlic, and carrot. 4. Add cold rice and soy sauce. 5. Toss everything together. 6. Season with pepper.",
+    "estimatedCalories": 380
+  },
+  {
+    "id": 17,
+    "name": "Greek Yogurt Bowl",
+    "category": "Dairy",
+    "ingredients": ["yogurt", "honey", "banana", "granola", "berries"],
+    "instructions": "1. Scoop yogurt into a bowl. 2. Drizzle with honey. 3. Top with sliced banana, berries, and granola. 4. Serve immediately.",
+    "estimatedCalories": 250
+  },
+  {
+    "id": 18,
+    "name": "Vegetable Soup",
+    "category": "Vegetables",
+    "ingredients": ["carrot", "potato", "onion", "celery", "garlic", "salt", "pepper", "butter"],
+    "instructions": "1. Dice all vegetables. 2. Sauté onion and garlic in butter. 3. Add remaining vegetables and water. 4. Boil and then simmer for 20 minutes. 5. Season and serve.",
+    "estimatedCalories": 160
+  },
+  {
+    "id": 19,
+    "name": "Peanut Butter Toast",
+    "category": "Snacks",
+    "ingredients": ["bread", "peanut butter", "honey", "banana"],
+    "instructions": "1. Toast bread slices. 2. Spread peanut butter generously. 3. Drizzle with honey. 4. Top with banana slices. 5. Serve as breakfast or snack.",
+    "estimatedCalories": 310
+  },
+  {
+    "id": 20,
+    "name": "Lemon Mint Cooler",
+    "category": "Beverages",
+    "ingredients": ["lemon", "mint", "sugar", "water", "ice", "salt"],
+    "instructions": "1. Squeeze fresh lemon juice. 2. Muddle mint leaves with sugar. 3. Mix with chilled water and a pinch of salt. 4. Add ice cubes. 5. Stir well and serve.",
+    "estimatedCalories": 80
+  },
+  {
+    "id": 21,
+    "name": "Mushroom Risotto",
+    "category": "Grains",
+    "ingredients": ["rice", "mushroom", "onion", "garlic", "butter", "cheese", "salt", "pepper"],
+    "instructions": "1. Sauté mushrooms in butter. 2. In another pan, cook onion and garlic. 3. Add rice and stir. 4. Gradually add warm water while stirring. 5. Mix in mushrooms and cheese. 6. Season and serve.",
+    "estimatedCalories": 400
+  },
+  {
+    "id": 22,
+    "name": "Fish Fry",
+    "category": "Meat",
+    "ingredients": ["fish", "turmeric", "red chili", "salt", "lemon", "oil", "garlic"],
+    "instructions": "1. Clean fish and pat dry. 2. Marinate with turmeric, red chili, salt, lemon juice, and garlic paste. 3. Rest for 30 minutes. 4. Shallow fry in hot oil until golden on both sides.",
+    "estimatedCalories": 350
+  },
+  {
+    "id": 23,
+    "name": "Avocado Toast",
+    "category": "Snacks",
+    "ingredients": ["bread", "avocado", "lemon", "salt", "pepper", "red chili"],
+    "instructions": "1. Toast bread slices. 2. Mash avocado with lemon juice, salt, and pepper. 3. Spread on toast. 4. Sprinkle red chili flakes. 5. Serve immediately.",
+    "estimatedCalories": 290
+  },
+  {
+    "id": 24,
+    "name": "Palak Paneer",
+    "category": "Dairy",
+    "ingredients": ["spinach", "paneer", "onion", "tomato", "garlic", "ginger", "cream", "cumin", "salt"],
+    "instructions": "1. Blanch and puree spinach. 2. Sauté onion, garlic, and ginger in oil. 3. Add tomato and cook. 4. Add spinach puree and cumin. 5. Add paneer cubes and cream. 6. Simmer for 10 minutes.",
+    "estimatedCalories": 380
+  },
+  {
+    "id": 25,
+    "name": "Chocolate Milkshake",
+    "category": "Beverages",
+    "ingredients": ["milk", "chocolate", "sugar", "ice cream", "ice"],
+    "instructions": "1. Add milk, chocolate syrup, sugar, and ice cream to blender. 2. Add ice. 3. Blend until thick and frothy. 4. Pour into tall glass. 5. Serve with whipped cream.",
+    "estimatedCalories": 450
+  },
+  {
+    "id": 26,
+    "name": "Chole (Chickpea Curry)",
+    "category": "Grains",
+    "ingredients": ["chickpea", "onion", "tomato", "ginger", "garlic", "cumin", "coriander", "turmeric", "oil", "salt"],
+    "instructions": "1. Soak and boil chickpeas until soft. 2. Sauté onions until golden. 3. Add ginger-garlic paste. 4. Add tomatoes and spices, cook until oil separates. 5. Add chickpeas and simmer for 15 minutes.",
+    "estimatedCalories": 340
+  },
+  {
+    "id": 27,
+    "name": "French Toast",
+    "category": "Snacks",
+    "ingredients": ["bread", "egg", "milk", "sugar", "cinnamon", "butter", "vanilla"],
+    "instructions": "1. Beat eggs with milk, sugar, vanilla, and cinnamon. 2. Dip bread slices in the mixture. 3. Melt butter on a pan. 4. Cook bread until golden on both sides. 5. Serve with syrup.",
+    "estimatedCalories": 360
+  },
+  {
+    "id": 28,
+    "name": "Raita",
+    "category": "Dairy",
+    "ingredients": ["yogurt", "cucumber", "onion", "cumin", "salt", "coriander", "mint"],
+    "instructions": "1. Whisk yogurt until smooth. 2. Add finely chopped cucumber and onion. 3. Season with roasted cumin powder, salt, and chopped mint. 4. Garnish with coriander. 5. Chill before serving.",
+    "estimatedCalories": 90
+  },
+  {
+    "id": 29,
+    "name": "Potato Wedges",
+    "category": "Snacks",
+    "ingredients": ["potato", "olive oil", "garlic", "paprika", "salt", "pepper", "oregano"],
+    "instructions": "1. Cut potatoes into wedges. 2. Toss with olive oil, garlic, paprika, oregano, salt, and pepper. 3. Spread on a baking tray. 4. Bake at 200°C for 30-35 minutes until crispy.",
+    "estimatedCalories": 280
+  },
+  {
+    "id": 30,
+    "name": "Mixed Vegetable Curry",
+    "category": "Vegetables",
+    "ingredients": ["potato", "carrot", "beans", "peas", "onion", "tomato", "turmeric", "cumin", "coriander", "oil", "salt"],
+    "instructions": "1. Cut all vegetables into cubes. 2. Sauté onions in oil. 3. Add tomatoes and spices. 4. Add vegetables and water. 5. Cover and cook until tender. 6. Garnish with coriander.",
+    "estimatedCalories": 220
+  }
+]
