@@ -4,10 +4,6 @@
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\drawable\\ic_delete.xml"
     },
     {
-        "merged": "com.smartpantry.app-merged_res-56:/drawable_logo.png.flat",
-        "source": "com.smartpantry.app-main-58:/drawable/logo.png"
-    },
-    {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-merged_res-56:\\drawable_ic_add.xml.flat",
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\drawable\\ic_add.xml"
     },
@@ -30,6 +26,10 @@
     {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-merged_res-56:\\layout_item_pantry.xml.flat",
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\item_pantry.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-merged_res-56:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\drawable\\logo.png"
     },
     {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-merged_res-56:\\layout_item_meal_log.xml.flat",
@@ -106,6 +106,10 @@
     {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-merged_res-56:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.smartpantry.app-merged_res-56:/layout_fragment_profile.xml.flat",
+        "source": "com.smartpantry.app-main-58:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-merged_res-56:\\drawable_ic_goal.xml.flat",

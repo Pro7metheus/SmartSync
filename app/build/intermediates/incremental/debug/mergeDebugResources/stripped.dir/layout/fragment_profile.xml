@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="?attr/colorSurface" android:orientation="vertical" android:padding="24dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/profile" android:textAppearance="?attr/textAppearanceHeadlineMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+    <!-- User info card -->
+    <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="20dp">
+
+            <ImageView android:layout_width="56dp" android:layout_height="56dp" android:background="?attr/colorPrimaryContainer" android:padding="12dp" android:src="@drawable/ic_profile" app:tint="?attr/colorOnPrimaryContainer" />
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="?attr/textAppearanceTitleLarge" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="SmartySync User" android:textAppearance="?attr/textAppearanceBodyMedium" android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Calorie Goal -->
+    <com.google.android.material.card.MaterialCardView style="@style/Widget.SmartPantry.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/calorie_goal_title" android:textAppearance="?attr/textAppearanceTitleMedium" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center_vertical" android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_calorie_goal" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="12dp" android:layout_weight="1" android:hint="@string/enter_calorie_goal" app:suffixText="kcal">
+
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_calorie_goal" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_save_goal" style="@style/Widget.SmartPantry.Button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <View android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+    <!-- Logout -->
+    <com.google.android.material.button.MaterialButton android:id="@+id/btn_logout" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="56dp" android:text="@string/logout" android:textColor="@color/md_theme_error" app:icon="@drawable/ic_logout" app:iconTint="@color/md_theme_error" app:strokeColor="@color/md_theme_error" />
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" android:text="SmartySync v1.0" android:textAppearance="?attr/textAppearanceLabelSmall" android:textColor="?attr/colorOnSurfaceVariant" />
+</LinearLayout>
