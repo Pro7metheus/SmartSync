@@ -7,7 +7,7 @@ import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 object DateUtils {
-    private val displayFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+    private val displayFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
 
     fun formatDate(timestamp: Long): String {
         return displayFormat.format(Date(timestamp))

@@ -23,6 +23,16 @@ import com.smartpantry.databinding.FragmentAddEditItemBinding
 import com.smartpantry.utils.DateUtils
 import kotlinx.coroutines.launch
 
+/**
+ * Fragment responsible for adding new items or editing existing items in the pantry.
+ * 
+ * This class handles:
+ * 1. UI Setup: Setting up dropdowns, date pickers, and click listeners.
+ * 2. Autocomplete (USDA API): Listens to user typing in the Name field, calls the ViewModel to search foods, 
+ *    and parses Natural Language input (NLP) to auto-fill Quantity, Unit, and Calories.
+ * 3. Validation: Ensures the user fills out required fields before saving.
+ * 4. Data Saving: Collects user input and passes a `PantryItem` object back to the ViewModel to interact with Room DB.
+ */
 class AddEditItemFragment : Fragment() {
 
     private var _binding: FragmentAddEditItemBinding? = null
@@ -112,7 +122,7 @@ class AddEditItemFragment : Fragment() {
                     val adapter = ArrayAdapter(
                         requireContext(),
                         android.R.layout.simple_dropdown_item_1line,
-                        results.map { it.description.lowercase().replaceFirstChar { char -> char.uppercase() } }
+                        results.map { formatFoodDescription(it) }
                     )
                     binding.etName.setAdapter(adapter)
 
@@ -142,7 +152,7 @@ class AddEditItemFragment : Fragment() {
         binding.etName.setOnItemClickListener { parent, _, position, _ ->
             val selectedText = parent.getItemAtPosition(position) as String
             val selectedFood = viewModel.usdaSearchResults.value.find {
-                it.description.lowercase().replaceFirstChar { char -> char.uppercase() } == selectedText
+                formatFoodDescription(it) == selectedText
             }
             
             if (selectedFood != null) {
@@ -157,24 +167,55 @@ class AddEditItemFragment : Fragment() {
                 viewModel.clearUsdaSearch()
 
                 // Set Quantity and Unit using NLP results or fallback to API defaults
-                val finalQuantity = nlpResult.quantity ?: selectedFood.servingSize ?: 1.0
-                val finalUnit = nlpResult.unit ?: selectedFood.servingSizeUnit?.let { unit ->
+                var finalQuantity = nlpResult.quantity ?: selectedFood.servingSize ?: 1.0
+                var finalUnit = nlpResult.unit ?: selectedFood.servingSizeUnit?.let { unit ->
                     when (unit.lowercase()) {
                         "g", "gr", "gram" -> "g"
                         "ml", "milliliter" -> "ml"
-                        "oz", "ounce" -> "oz"
+                        "oz", "ounce", "ounces" -> "oz"
+                        "lb", "pound", "pounds", "lbs" -> "lbs"
+                        "fl oz" -> "fl oz"
                         else -> "pieces"
                     }
                 } ?: "pieces"
 
-                binding.etQuantity.setText(if (finalQuantity % 1.0 == 0.0) finalQuantity.toInt().toString() else finalQuantity.toString())
+                // Convert American measurements to Standard (Metric) measurements
+                when (finalUnit.lowercase()) {
+                    "oz", "ounce", "ounces" -> {
+                        finalQuantity *= 28.3495
+                        finalUnit = "g"
+                    }
+                    "lb", "lbs", "pound", "pounds" -> {
+                        finalQuantity *= 453.592
+                        finalUnit = "g"
+                    }
+                    "fl oz", "fluid ounce" -> {
+                        finalQuantity *= 29.5735
+                        finalUnit = "ml"
+                    }
+                }
+
+                if (finalUnit == "g" || finalUnit == "ml") {
+                    finalQuantity = kotlin.math.round(finalQuantity)
+                }
+
+                binding.etQuantity.setText(if (finalQuantity % 1.0 == 0.0) finalQuantity.toInt().toString() else String.format(java.util.Locale.US, "%.1f", finalQuantity))
                 binding.dropdownUnit.setText(finalUnit, false)
 
-                // Set Calories (scale if user provided a specific quantity and USDA gives a serving size)
+                // Standardize selectedFood's serving size to metric for accurate calorie calculation
+                var usdaServingSize = selectedFood.servingSize ?: 1.0
+                val usdaUnit = selectedFood.servingSizeUnit ?: ""
+                when (usdaUnit.lowercase()) {
+                    "oz", "ounce", "ounces" -> usdaServingSize *= 28.3495
+                    "lb", "lbs", "pound", "pounds" -> usdaServingSize *= 453.592
+                    "fl oz", "fluid ounce" -> usdaServingSize *= 29.5735
+                }
+
+                // Set Calories (scale using standardized metric values)
                 val baseCals = selectedFood.energyKcal
                 if (baseCals > 0) {
                     val calsToSet = if (nlpResult.quantity != null && selectedFood.servingSize != null && selectedFood.servingSize > 0) {
-                        (baseCals / selectedFood.servingSize) * nlpResult.quantity
+                        (baseCals / usdaServingSize) * finalQuantity
                     } else {
                         baseCals
                     }
@@ -272,5 +313,26 @@ class AddEditItemFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun formatFoodDescription(food: UsdaFood): String {
+        val name = food.description.lowercase().replaceFirstChar { char -> char.uppercase() }
+        val details = mutableListOf<String>()
+        if (!food.brandOwner.isNullOrBlank()) {
+            // Capitalize each word in brand owner for better display
+            val brand = food.brandOwner.lowercase().split(" ").joinToString(" ") { word ->
+                word.replaceFirstChar { char -> char.uppercase() }
+            }
+            details.add(brand)
+        }
+        if (food.servingSize != null && food.servingSize > 0.0 && !food.servingSizeUnit.isNullOrBlank()) {
+            val sizeStr = if (food.servingSize % 1.0 == 0.0) food.servingSize.toInt().toString() else food.servingSize.toString()
+            details.add("$sizeStr ${food.servingSizeUnit.lowercase()}")
+        }
+        return if (details.isNotEmpty()) {
+            "$name (${details.joinToString(", ")})"
+        } else {
+            name
+        }
     }
 }

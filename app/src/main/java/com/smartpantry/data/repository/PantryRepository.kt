@@ -9,6 +9,17 @@ import com.smartpantry.data.model.usda.UsdaFood
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * Repository class that acts as the single source of truth for Pantry data.
+ * 
+ * In the MVVM architecture, the Repository abstracts the data sources from the rest of the app.
+ * It decides whether to fetch data from the local database (Room) or from a remote network (API).
+ * 
+ * - For local data: It delegates fast, offline queries to `PantryItemDao`.
+ * - For remote data: It uses `RetrofitClient` to call the USDA API for nutritional search.
+ * 
+ * Flow of data: UI -> ViewModel -> Repository -> (Room Database OR Retrofit API)
+ */
 class PantryRepository(private val pantryItemDao: PantryItemDao) {
 
     fun getAllItems(userId: Long): LiveData<List<PantryItem>> =

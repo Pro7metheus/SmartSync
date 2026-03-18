@@ -13,6 +13,17 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for managing pantry items and business logic.
+ * 
+ * In MVVM, the ViewModel prepares and manages data for the UI (Fragment/Activity).
+ * It survives configuration changes (like screen rotations) and prevents data loss.
+ * 
+ * - Here, it holds the list of `allItems` as LiveData so the UI updates automatically when data changes.
+ * - It handles filtering via a `MediatorLiveData` which combines search query and category filters.
+ * - It delegates database and API calls to the `PantryRepository` inside Kotlin Coroutines (`viewModelScope`) 
+ *   to keep the main UI thread responsive.
+ */
 class PantryViewModel(application: Application) : AndroidViewModel(application) {
 
     private val app = application as SmartPantryApp

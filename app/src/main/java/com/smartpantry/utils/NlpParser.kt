@@ -9,6 +9,18 @@ data class NlpResult(
     val foodName: String
 )
 
+/**
+ * Utility object for parsing natural language input from the user.
+ * 
+ * This parser extracts three main components from a string:
+ * 1. Quantity (e.g., "2", "1.5")
+ * 2. Unit of measurement (e.g., "lbs", "kg", "cups")
+ * 3. Food Name (e.g., "chicken", "flour")
+ * 
+ * Example usage: "2 lbs of chicken" -> NlpResult(2.0, "lbs", "chicken")
+ * Students can explain that this uses Regular Expressions (Regex) to 
+ * separate the numeric part from the text part.
+ */
 object NlpParser {
 
     fun parseInput(input: String): NlpResult {
