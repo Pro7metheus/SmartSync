@@ -14,10 +14,39 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.snackbar.Snackbar
 import com.smartpantry.R
 import com.smartpantry.data.model.PantryItem
+import com.smartpantry.data.model.usda.UsdaFood
 import com.smartpantry.databinding.FragmentMealLogBinding
+import kotlinx.coroutines.launch
+
+sealed class Suggestion {
+    abstract val displayText: String
+    data class PantrySuggestion(val item: PantryItem) : Suggestion() {
+        override val displayText = "${item.name} (${item.caloriesPerUnit} kcal/${item.unit}) - Pantry"
+    }
+    data class UsdaSuggestion(val food: UsdaFood) : Suggestion() {
+        override val displayText: String get() {
+            val name = food.description.lowercase().replaceFirstChar { it.uppercase() }
+            val brand = if (!food.brandOwner.isNullOrBlank()) {
+                val b = food.brandOwner.lowercase().split(" ").joinToString(" ") { word ->
+                    word.replaceFirstChar { char -> char.uppercase() }
+                }
+                "($b) "
+            } else ""
+            val sizeStr = if (food.servingSize != null) {
+                if (food.servingSize % 1.0 == 0.0) food.servingSize.toInt().toString() else food.servingSize.toString()
+            } else "1"
+            val unitStr = food.servingSizeUnit?.lowercase() ?: "serving"
+            return "$name $brand- $sizeStr $unitStr - USDA"
+        }
+    }
+    override fun toString(): String = displayText
+}
 
 class MealLogFragment : Fragment() {
 
@@ -25,8 +54,10 @@ class MealLogFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: CalorieViewModel by viewModels()
     private lateinit var adapter: MealLogAdapter
-    private var selectedItem: PantryItem? = null
+    private var selectedSuggestion: Suggestion? = null
     private var pantryItemsList: List<PantryItem> = emptyList()
+    private var currentSuggestions = mutableListOf<Suggestion>()
+    private var dropdownAdapter: ArrayAdapter<Suggestion>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,21 +97,63 @@ class MealLogFragment : Fragment() {
     }
 
     private fun setupItemDropdown() {
+        dropdownAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_dropdown_item_1line,
+            currentSuggestions
+        )
+        binding.dropdownItem.setAdapter(dropdownAdapter)
+
         viewModel.pantryItems.observe(viewLifecycleOwner) { items ->
             pantryItemsList = items
-            val names = items.map { "${it.name} (${it.caloriesPerUnit} kcal/${it.unit})" }
-            val dropdownAdapter = ArrayAdapter(
-                requireContext(),
-                android.R.layout.simple_dropdown_item_1line,
-                names
-            )
-            binding.dropdownItem.setAdapter(dropdownAdapter)
+            updateDropdownSuggestions()
         }
 
-        binding.dropdownItem.setOnItemClickListener { _, _, position, _ ->
-            selectedItem = pantryItemsList.getOrNull(position)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.usdaSearchResults.collect { results ->
+                    updateDropdownSuggestions(results)
+                    if (results.isNotEmpty() && binding.dropdownItem.hasFocus()) {
+                        binding.dropdownItem.showDropDown()
+                    }
+                }
+            }
+        }
+
+        binding.dropdownItem.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                val query = s?.toString() ?: ""
+                if (binding.dropdownItem.hasFocus()) {
+                    updateDropdownSuggestions()
+                    viewModel.searchUsdaFoods(query)
+                }
+            }
+        })
+
+        binding.dropdownItem.setOnItemClickListener { parent, _, position, _ ->
+            val suggestion = parent.getItemAtPosition(position) as Suggestion
+            selectedSuggestion = suggestion
+            val textToSet = when(suggestion) {
+                is Suggestion.PantrySuggestion -> suggestion.item.name
+                is Suggestion.UsdaSuggestion -> suggestion.food.description.lowercase().replaceFirstChar { it.uppercase() }
+            }
+            binding.dropdownItem.setText(textToSet, false)
+            viewModel.clearUsdaSearch()
             updateCaloriePreview()
         }
+    }
+
+    private fun updateDropdownSuggestions(usdaResults: List<UsdaFood> = viewModel.usdaSearchResults.value) {
+        val query = binding.dropdownItem.text.toString().lowercase()
+        val filteredPantry = if (query.isEmpty()) pantryItemsList else pantryItemsList.filter { it.name.lowercase().contains(query) }
+        
+        currentSuggestions.clear()
+        currentSuggestions.addAll(filteredPantry.map { Suggestion.PantrySuggestion(it) })
+        currentSuggestions.addAll(usdaResults.map { Suggestion.UsdaSuggestion(it) })
+        
+        dropdownAdapter?.notifyDataSetChanged()
     }
 
     private fun setupQuantityInput() {
@@ -94,10 +167,13 @@ class MealLogFragment : Fragment() {
     }
 
     private fun updateCaloriePreview() {
-        val item = selectedItem
+        val suggestion = selectedSuggestion
         val qty = binding.etQuantity.text.toString().toDoubleOrNull() ?: 0.0
-        if (item != null && qty > 0) {
-            val cal = (item.caloriesPerUnit * qty).toInt()
+        if (suggestion != null && qty > 0) {
+            val cal = when (suggestion) {
+                is Suggestion.PantrySuggestion -> (suggestion.item.caloriesPerUnit * qty).toInt()
+                is Suggestion.UsdaSuggestion -> (suggestion.food.energyKcal * qty).toInt()
+            }
             binding.tvCaloriePreview.text = "= $cal kcal"
         } else {
             binding.tvCaloriePreview.text = "= 0 kcal"
@@ -106,10 +182,10 @@ class MealLogFragment : Fragment() {
 
     private fun setupLogButton() {
         binding.btnLogMeal.setOnClickListener {
-            val item = selectedItem
+            val suggestion = selectedSuggestion
             val qty = binding.etQuantity.text.toString().toDoubleOrNull()
 
-            if (item == null) {
+            if (suggestion == null) {
                 Snackbar.make(binding.root, "Please select an item", Snackbar.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -118,10 +194,28 @@ class MealLogFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            viewModel.logMeal(item, qty)
+            when (suggestion) {
+                is Suggestion.PantrySuggestion -> {
+                    viewModel.logMeal(suggestion.item, qty)
+                }
+                is Suggestion.UsdaSuggestion -> {
+                    val name = suggestion.food.description.lowercase().replaceFirstChar { it.uppercase() }
+                    val baseCals = suggestion.food.energyKcal
+                    val cals = (baseCals * qty).toInt()
+                    
+                    val sizeStr = if (suggestion.food.servingSize != null) {
+                        if (suggestion.food.servingSize % 1.0 == 0.0) suggestion.food.servingSize.toInt().toString() else suggestion.food.servingSize.toString()
+                    } else "1"
+                    val unitStr = suggestion.food.servingSizeUnit?.lowercase() ?: "serving"
+                    val fullUnit = "$sizeStr $unitStr"
+
+                    viewModel.logCustomMeal(name, cals, qty, fullUnit)
+                }
+            }
+
             binding.dropdownItem.setText("", false)
             binding.etQuantity.setText("")
-            selectedItem = null
+            selectedSuggestion = null
             binding.tvCaloriePreview.text = "= 0 kcal"
             Snackbar.make(binding.root, "Meal logged!", Snackbar.LENGTH_SHORT).show()
         }

@@ -20,6 +20,10 @@
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_profile.xml"
     },
     {
+        "merged": "com.smartpantry.app-mergeDebugResources-55:/layout/fragment_meal_log.xml",
+        "source": "com.smartpantry.app-main-58:/layout/fragment_meal_log.xml"
+    },
+    {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_pantry_list.xml",
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\fragment_pantry_list.xml"
     },
@@ -30,10 +34,6 @@
     {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\item_pantry.xml",
         "source": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-main-58:\\layout\\item_pantry.xml"
-    },
-    {
-        "merged": "com.smartpantry.app-mergeDebugResources-55:/layout/fragment_profile.xml",
-        "source": "com.smartpantry.app-main-58:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\Shaurya Mandawara\\.gradle\\daemon\\8.5\\com.smartpantry.app-mergeDebugResources-55:\\layout\\fragment_login.xml",

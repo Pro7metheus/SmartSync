@@ -8,6 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.smartpantry.SmartPantryApp
 import com.smartpantry.data.model.MealLog
 import com.smartpantry.data.model.PantryItem
+import com.smartpantry.data.model.usda.UsdaFood
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class CalorieViewModel(application: Application) : AndroidViewModel(application) {
@@ -27,6 +33,12 @@ class CalorieViewModel(application: Application) : AndroidViewModel(application)
 
     private val _weeklyData = MutableLiveData<List<Pair<String, Int>>>()
     val weeklyData: LiveData<List<Pair<String, Int>>> = _weeklyData
+
+    // For USDA API Autocomplete
+    private val _usdaSearchResults = MutableStateFlow<List<UsdaFood>>(emptyList())
+    val usdaSearchResults: StateFlow<List<UsdaFood>> = _usdaSearchResults.asStateFlow()
+
+    private var searchJob: Job? = null
 
     fun loadPantryItems() {
         viewModelScope.launch {
@@ -50,6 +62,20 @@ class CalorieViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
+    fun logCustomMeal(name: String, caloriesConsumed: Int, quantityConsumed: Double, unit: String) {
+        val mealLog = MealLog(
+            pantryItemId = -1L,
+            itemName = name,
+            caloriesConsumed = caloriesConsumed,
+            quantityConsumed = quantityConsumed,
+            unit = unit,
+            userId = userId
+        )
+        viewModelScope.launch {
+            calorieRepository.logMeal(mealLog)
+        }
+    }
+
     fun deleteMealLog(mealLog: MealLog) {
         viewModelScope.launch {
             calorieRepository.deleteMealLog(mealLog)
@@ -65,5 +91,25 @@ class CalorieViewModel(application: Application) : AndroidViewModel(application)
 
     fun setDailyGoal(goal: Int) {
         authManager.dailyCalorieGoal = goal
+    }
+
+    // --- USDA API Search ---
+
+    fun searchUsdaFoods(query: String) {
+        searchJob?.cancel()
+        if (query.length < 3) {
+            _usdaSearchResults.value = emptyList()
+            return
+        }
+        searchJob = viewModelScope.launch {
+            delay(500)
+            val results = pantryRepository.searchFoodsOnline(query)
+            _usdaSearchResults.value = results
+        }
+    }
+
+    fun clearUsdaSearch() {
+        searchJob?.cancel()
+        _usdaSearchResults.value = emptyList()
     }
 }

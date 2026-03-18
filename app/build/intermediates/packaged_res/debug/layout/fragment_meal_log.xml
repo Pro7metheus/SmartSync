@@ -35,12 +35,12 @@
 
                     <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_select_item" style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="@string/select_item">
 
-                        <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@+id/dropdown_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="none" />
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@+id/dropdown_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textAutoComplete" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
 
-                        <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_quantity" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="8dp" android:hint="@string/quantity_consumed">
+                        <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_quantity" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="8dp" android:hint="@string/quantity_consumed" app:helperText="e.g. 1 (serving/piece)">
 
                             <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_quantity" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
