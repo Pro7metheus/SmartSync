@@ -28,6 +28,7 @@ sealed class Suggestion {
     abstract val displayText: String
     data class PantrySuggestion(val item: PantryItem) : Suggestion() {
         override val displayText = "${item.name} (${item.caloriesPerUnit} kcal/${item.unit}) - Pantry"
+        override fun toString() = displayText
     }
     data class UsdaSuggestion(val food: UsdaFood) : Suggestion() {
         override val displayText: String get() {
@@ -44,6 +45,7 @@ sealed class Suggestion {
             val unitStr = food.servingSizeUnit?.lowercase() ?: "serving"
             return "$name $brand- $sizeStr $unitStr - USDA"
         }
+        override fun toString() = displayText
     }
     override fun toString(): String = displayText
 }
