@@ -130,9 +130,9 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Shaurya Mandawara\
 	android:label
 		ADDED from E:\SmartPantry\app\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from E:\SmartPantry\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from E:\SmartPantry\app\src\main\AndroidManifest.xml:13:9-43
 	android:icon
-		ADDED from E:\SmartPantry\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from E:\SmartPantry\app\src\main\AndroidManifest.xml:11:9-38
 	android:allowBackup
 		ADDED from E:\SmartPantry\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme

@@ -68,6 +68,7 @@ drawable ic_pantry
 drawable ic_profile
 drawable ic_recipes
 drawable ic_search
+drawable logo
 id action_login_to_dashboard
 id action_login_to_register
 id action_mealLog_to_weekly

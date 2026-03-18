@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Smart Pantry</string>
+    <string name="app_name">SmartySync</string>
 
     <!-- Navigation -->
     <string name="nav_dashboard">Dashboard</string>
@@ -20,7 +20,7 @@
     <string name="welcome_back">Welcome Back!</string>
     <string name="create_account">Create Account</string>
     <string name="login_subtitle">Sign in to manage your pantry</string>
-    <string name="register_subtitle">Get started with Smart Pantry</string>
+    <string name="register_subtitle">Get started with SmartySync</string>
 
     <!-- Dashboard -->
     <string name="total_items">Total Items</string>

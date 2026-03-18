@@ -55,7 +55,7 @@
     <color name="status_low_stock">#FF5722</color>
     <string name="add_item">Add Item</string>
     <string name="all_categories">All</string>
-    <string name="app_name">Smart Pantry</string>
+    <string name="app_name">SmartySync</string>
     <string name="available">Available</string>
     <string name="avg_weekly">Avg: %d kcal/day</string>
     <string name="calorie_goal">of %d kcal goal</string>

@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SmartPantry"
+rootProject.name = "SmartySync"
 include(":app")

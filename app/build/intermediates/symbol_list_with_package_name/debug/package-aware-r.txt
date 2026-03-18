@@ -3139,6 +3139,7 @@ drawable ic_profile
 drawable ic_recipes
 drawable ic_search
 drawable ic_search_black_24
+drawable logo
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
